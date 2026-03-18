@@ -5,6 +5,11 @@
 Este proyecto consiste en el desarrollo de un catálogo de productos tecnológicos utilizando **Flet**, aplicando el uso de componentes reutilizables y posteriormente adaptado para despliegue web.
 
 El sistema muestra productos en forma de tarjetas (cards), permitiendo una interfaz moderna, organizada y escalable.
+El presente proyecto consiste en el desarrollo de una aplicación de catálogo de productos tecnológicos, cuyo objetivo principal es implementar una interfaz gráfica moderna mediante el uso de componentes reutilizables, aplicando principios fundamentales del desarrollo de software como la modularidad, la escalabilidad y la separación de responsabilidades.
+
+Inicialmente, el sistema fue desarrollado utilizando Flet, un framework de Python para la creación de interfaces gráficas, y posteriormente adaptado a una versión web utilizando HTML, CSS y JavaScript para su despliegue final.
+
+El sistema permite visualizar productos, interactuar con ellos mediante acciones como agregar al carrito o marcar como favoritos, y presenta un diseño limpio, profesional y adaptable a diferentes tamaños de pantalla.
 
 ---
 
@@ -253,6 +258,7 @@ O en web:
 ```bash
 flet run main.py --web
 ```
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/2bab4557-5018-469b-bf17-35726b8a5e5b" />
 
 ---
 
