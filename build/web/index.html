@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>TechStore</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: linear-gradient(135deg,#a1a8c9,#c7cbe6);
+    margin: 0;
+    padding: 20px;
+}
+
+/* HEADER */
+.header {
+    background: #eee;
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.title h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+.title p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.icons {
+    font-size: 20px;
+}
+
+.counter {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+/* GRID */
+.grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    background: #f2f2f2;
+    border-radius: 15px;
+    padding: 15px;
+    transition: 0.3s;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+}
+
+.card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.price {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    background: #3b4cca;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #222;
+}
+
+.heart {
+    cursor: pointer;
+    font-size: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <div class="title">
+        <h1>TechStore</h1>
+        <p>Catálogo de productos tecnológicos modernos</p>
+    </div>
+
+    <div class="icons">
+        ❤️ <span id="favCount">0</span>
+        🛒 <span id="cartCount">0</span>
+    </div>
+</div>
+
+<div class="grid" id="products"></div>
+
+<script>
+let fav = 0;
+let cart = 0;
+
+const data = [
+{nombre:"Laptop Gamer",desc:"Ryzen 7 16GB RAM",precio:25000,img:"laptopgamer.jpg"},
+{nombre:"Mouse Gamer",desc:"Mouse RGB",precio:350,img:"mouse.jpg"},
+{nombre:"Teclado Mecánico",desc:"Switch blue RGB",precio:1200,img:"teclado.jpg"},
+{nombre:"Audifonos Gamer",desc:"Sonido envolvente",precio:900,img:"audifonosg.jpg"},
+{nombre:"Televisión 32",desc:"Full HD 144Hz",precio:4200,img:"televisor.jpg"},
+{nombre:"Audifonos",desc:"Alta calidad",precio:4200,img:"audifonos.jpg"},
+{nombre:"Cargador",desc:"Carga rápida",precio:4200,img:"cargador.jpg"},
+{nombre:"Impresora",desc:"Alta resolución",precio:4200,img:"impresora.jpg"},
+{nombre:"Tablet",desc:"Pantalla HD",precio:4200,img:"tablet.jpg"},
+{nombre:"Smartwatch",desc:"Monitor de salud",precio:4200,img:"smartwatch.jpg"},
+{nombre:"Laptop",desc:"Uso general",precio:4200,img:"laptop.jpg"},
+{nombre:"Bocina",desc:"Sonido potente",precio:4200,img:"bocina.jpg"},
+{nombre:"Multicontactos",desc:"Protección eléctrica",precio:4200,img:"multicontacto.jpg"},
+{nombre:"Microfono",desc:"Alta fidelidad",precio:4200,img:"microfono.jpg"},
+{nombre:"Router",desc:"Alta velocidad",precio:4200,img:"router.jpg"}
+];
+
+const container = document.getElementById("products");
+
+data.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+        <img src="assets/${p.img}">
+        <h3>${p.nombre}</h3>
+        <p>${p.desc}</p>
+        <p class="price">$ ${p.precio}</p>
+        <div class="actions">
+            <span class="heart" onclick="addFav(this)">❤️</span>
+            <button onclick="addCart()">Agregar</button>
+        </div>
+    `;
+
+    container.appendChild(card);
+});
+
+function addFav(el){
+    fav++;
+    document.getElementById("favCount").innerText = fav;
+    el.style.color = "red";
+}
+
+function addCart(){
+    cart++;
+    document.getElementById("cartCount").innerText = cart;
+}
+</script>
+
+</body>
+</html>
