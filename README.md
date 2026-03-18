@@ -271,18 +271,11 @@ flet run main.py --web
 flet build web
 ```
 
-Luego:
+<img width="1904" height="1012" alt="image" src="https://github.com/user-attachments/assets/bdad6bf8-28d0-415b-bf70-51600e547393" />
 
-```bash
-cd build/web
-python -m http.server 8000
-```
 
-Abrir:
+---
 
-```
-http://localhost:8000
-```
 
 <img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/d73b8d50-debe-473f-8835-3961dd9c5e24" />
 
